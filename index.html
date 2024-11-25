@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chennai Travel Planner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/head.jpg') }}" alt="Header Image">
+    </header>
+    
+    <div class="container">
+        <form id="travelForm" action="{{ url_for('calculate') }}" method="post">
+    
+            <h2>SELECT STARTING POINT</h2>
+            <div id="buttons-container">
+                <div class="location-button" onclick="selectLocation('Chennai Central Railway Station', 'start')">
+                    <img src="{{ url_for('static', filename='images/chennai_central.jpg') }}" alt="Chennai Central Railway Station">
+                    <p>Chennai Central Railway Station</p>
+                </div>
+                <div class="location-button" onclick="selectLocation('Marina Beach', 'start')">
+                    <img src="{{ url_for('static', filename='images/marina_beach.jpg') }}" alt="Marina Beach">
+                    <p>Marina Beach</p>
+                </div>
+                <div class="location-button" onclick="selectLocation('Tidel Park', 'start')">
+                    <img src="{{ url_for('static', filename='images/tidel_park.jpg') }}" alt="Tidel Park">
+                    <p>Tidel Park</p>
+                </div>
+                <div class="location-button" onclick="selectLocation('Fort St. George', 'start')">
+                    <img src="{{ url_for('static', filename='images/fort_st_george.jpg') }}" alt="Fort St. George">
+                    <p>Fort St. George</p>
+                </div>
+                <div class="location-button" onclick="selectLocation('Santhome Cathedral Basilica', 'start')">
+                    <img src="{{ url_for('static', filename='images/santhome.jpg') }}" alt="Santhome Cathedral Basilica">
+                    <p>Santhome Cathedral Basilica</p>
+                </div>
+                <div class="location-button" onclick="selectLocation('Phoenix Marketcity', 'start')">
+                    <img src="{{ url_for('static', filename='images/phoenix.jpg') }}" alt="Phoenix Marketcity">
+                    <p>Phoenix Marketcity</p>
+                </div>
+                <div class="location-button" onclick="selectLocation('Guindy National Park', 'start')">
+                    <img src="{{ url_for('static', filename='images/guindy.jpg') }}" alt="Guindy National Park">
+                    <p>Guindy National Park</p>
+                </div>
+                <div class="location-button" onclick="selectLocation('Chennai Trade Centre', 'start')">
+                    <img src="{{ url_for('static', filename='images/tradecentre.jpg') }}" alt="Chennai Trade Centre">
+                    <p>Chennai Trade Centre</p>
+                </div>
+                <div class="location-button" onclick="selectLocation('Valluvar Kottam', 'start')">
+                    <img src="{{ url_for('static', filename='images/valluvar_kottam.jpg') }}" alt="Valluvar Kottam">
+                    <p>Valluvar Kottam</p>
+                </div>
+                <div class="location-button" onclick="selectLocation('Kapaleeshwarar Temple', 'start')">
+                    <img src="{{ url_for('static', filename='images/kapaleeshwarar.jpg') }}" alt="Kapaleeshwarar Temple">
+                    <p>Kapaleeshwarar Temple</p>
+                </div>
+                <div class="location-button" onclick="selectLocation('Mylapore', 'start')">
+                    <img src="{{ url_for('static', filename='images/mylapore.jpg') }}" alt="Mylapore">
+                    <p>Mylapore</p>
+                </div>
+            
+            </div>
+            <h2>SELECT DESTINATION</h2>
+            <div id="buttons-container">
+                <div class="location-button" onclick="selectLocation('Chennai Central Railway Station', 'end')">
+                    <img src="{{ url_for('static', filename='images/chennai_central.jpg') }}" alt="Chennai Central Railway Station">
+                    <p>Chennai Central Railway Station</p>
+                </div>
+                <div class="location-button" onclick="selectLocation('Marina Beach', 'end')">
+                    <img src="{{ url_for('static', filename='images/marina_beach.jpg') }}" alt="Marina Beach">
+                    <p>Marina Beach</p>
+                </div>
+                <div class="location-button" onclick="selectLocation('Tidel Park', 'end')">
+                    <img src="{{ url_for('static', filename='images/tidel_park.jpg') }}" alt="Tidel Park">
+                    <p>Tidel Park</p>
+                </div>
+                <div class="location-button" onclick="selectLocation('Fort St. George', 'end')">
+                    <img src="{{ url_for('static', filename='images/fort_st_george.jpg') }}" alt="Fort St. George">
+                    <p>Fort St. George</p>
+                </div>
+                <div class="location-button" onclick="selectLocation('Santhome Cathedral Basilica', 'end')">
+                    <img src="{{ url_for('static', filename='images/santhome.jpg') }}" alt="Santhome Cathedral Basilica">
+                    <p>Santhome Cathedral Basilica</p>
+                </div>
+                <div class="location-button" onclick="selectLocation('Phoenix Marketcity', 'end')">
+                    <img src="{{ url_for('static', filename='images/phoenix.jpg') }}" alt="Phoenix Marketcity">
+                    <p>Phoenix Marketcity</p>
+                </div>
+                <div class="location-button" onclick="selectLocation('Guindy National Park', 'end')">
+                    <img src="{{ url_for('static', filename='images/guindy.jpg') }}" alt="Guindy National Park">
+                    <p>Guindy National Park</p>
+                </div>
+                <div class="location-button" onclick="selectLocation('Chennai Trade Centre', 'end')">
+                    <img src="{{ url_for('static', filename='images/tradecentre.jpg') }}" alt="Chennai Trade Centre">
+                    <p>Chennai Trade Centre</p>
+                </div>
+                <div class="location-button" onclick="selectLocation('Valluvar Kottam', 'end')">
+                    <img src="{{ url_for('static', filename='images/valluvar_kottam.jpg') }}" alt="Valluvar Kottam">
+                    <p>Valluvar Kottam</p>
+                </div>
+                <div class="location-button" onclick="selectLocation('Kapaleeshwarar Temple', 'end')">
+                    <img src="{{ url_for('static', filename='images/kapaleeshwarar.jpg') }}" alt="Kapaleeshwarar Temple">
+                    <p>Kapaleeshwarar Temple</p>
+                </div>
+                <div class="location-button" onclick="selectLocation('Mylapore', 'end')">
+                    <img src="{{ url_for('static', filename='images/mylapore.jpg') }}" alt="Mylapore">
+                    <p>Mylapore</p>
+                </div>
+              
+            </div>
+            <input type="hidden" id="start" name="start">
+            <input type="hidden" id="end" name="end">
+            <button type="submit">Calculate Shortest Path</button>
+        </form>
+    </div>
+    
+    <script>
+        function selectLocation(location, type) {
+            document.getElementById(type).value = location;
+            alert(type + " selected: " + location);
+        }
+    </script>
+</body>
+</html>

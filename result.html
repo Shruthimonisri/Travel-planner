@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chennai Travel Planner - Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header></header>
+    <h1>Chennai Travel Planner</h1>
+    <div class="container">
+        <p>The shortest path from {{ start }} to {{ end }} is:</p>
+        <p>{{ path | join(" -> ") }}</p>
+        <p>Total distance: {{ distance }}</p>
+        <img src="{{ url_for('static', filename='graph.png') }}" alt="Graph of Important Places in Chennai">
+        <a href="{{ url_for('index') }}">Back to Home</a>
+    </div>
+</body>
+</html>
